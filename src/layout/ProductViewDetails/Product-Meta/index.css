@@ -1,0 +1,68 @@
+.titleGray {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    line-height: 0.9em;
+    font-size: 0.9rem;
+}
+.productTitle {
+    color: rgb(64, 69, 83);
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.grayColor {
+    color: rgb(126, 133, 155);
+    font-size: 1.0rem;
+}
+.colWidth {
+    width: 20%;
+}
+.cashBackView {
+    background-color: rgb(255, 248, 236);
+    border-radius: 8px;
+    display: flex;
+    font-size: 13px;
+    padding: 7px 15px;
+    margin-bottom: 12px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.imgCtr{
+    padding-right: 10px;
+}
+.imgCtr > img {
+    width: 30px;
+    max-width: unset;
+    height: 30px;
+    max-height: unset;
+}
+.bankOffer{
+    display: flex;
+    background: rgb(252, 251, 245);
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px;
+    font-size: 14px;
+}
+.emi-text{
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease-in 0s;
+    flex-shrink: 0;
+    color: rgb(56, 102, 223) !important;
+}
+.emiCards{
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+    flex: 1 1 0%;
+    min-width: 0px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}

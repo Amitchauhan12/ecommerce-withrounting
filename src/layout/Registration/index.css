@@ -1,0 +1,121 @@
+.inputCls {
+    display: inline-block;
+    height: 40px;
+    font-size: 16px;
+    width: 100%;
+    padding: 0 10px;
+    background: #fff;
+    color: #666;
+    transition: .2s ease-in-out;
+    transition-property: color, background-color, border;
+}
+
+.signInTitle {
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content{
+    width: 80%;;
+}
+
+.welcomeBack {
+
+    font-size: 1.785rem;
+    text-align: center;
+    color: rgb(64, 69, 83);
+}
+
+.sigupTest {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(64, 69, 83);
+
+}
+
+.signupBox {
+    display: flex;
+    margin-bottom: 25px;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.dont {
+
+    margin: 12px 0px;
+    text-align: center;
+}
+
+.linkSignup {
+    margin: 12px 5px;
+    color: rgb(56, 102, 223);
+    cursor: pointer;
+
+}
+
+.inputFieldDiv {
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.inputLabel {
+    color: rgb(126, 133, 155);
+    font-size: 1rem;
+    max-width: 100%;
+    pointer-events: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: all 0.2s ease 0s;
+}
+
+input {
+    padding: 10px 0px 5px;
+}
+
+.inputCls {
+    background: transparent;
+    font-size: 16px;
+    color: rgb(64, 69, 83);
+    display: block;
+    width: 100%;
+    border-top: initial;
+    border-right: initial;
+    border-left: initial;
+    user-select: text;
+    transform: none;
+    cursor: auto;
+    border-image: initial;
+    border-bottom: 1px solid rgb(226, 229, 241);
+}
+
+.forgotPass {
+    text-align: center;
+    margin-bottom: 32px;
+    color: rgb(56, 102, 223);
+}
+.dialogFooter{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid rgb(226, 229, 241);
+}
+.buttonCls{
+    flex: 1 1 0%;
+    text-align: center;
+    font-size: 1.25rem;
+    color: rgb(56, 102, 223);
+    font-weight: 600;
+    padding: 18px 0px;
+    text-transform: uppercase;
+}
+.error{
+    color: rgb(206, 15, 15);
+    height: 0.75rem;
+    margin-top: 5px;
+    font-size: 0.75rem;
+}
