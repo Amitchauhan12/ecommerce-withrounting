@@ -3,19 +3,19 @@ import React from 'react'
 function Footer() {
     return (
         <div className=''>
-            <div class="bg-gray-100 px-5 py-4 flex flex-row justify-between items-center">
-                <div>
+            <div class="bg-gray-100 px-3 md:px-5 py-4 flex flex-row justify-between items-center flex-wrap">
+                <div className='w-full md:w-4/12'>
                     <p className='text-xl font-bold text-gray-700 mb-2'>We're Always Here To Help</p>
                     <p className='text-xs font-medium text-gray-400'>Reach out to us through any of these support channels</p>
                 </div>
-                <div className='flex flex-row justify-between space-x-5 items-center'>
+                <div className='w-full py-4 md:w-8/12 flex flex-row justify-between md:justify-end space-x-5 items-center'>
                     <div className='flex flex-row justify-between space-x-3 items-center'>
                         <div>
                             <svg class="w-9 h-9 bg-white rounded-full p-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <div>
                             <p className='text-xs font-bold text-gray-500'>HELP CENTER</p>
-                            <p className='text-xl font-bold text-gray-600 '>help.noon.com</p>
+                            <p className='text-base md:text-xl font-bold text-gray-600'>help.noon.com</p>
                         </div>
                     </div>
                     <div className='flex flex-row justify-between space-x-3 items-center'>
@@ -24,15 +24,15 @@ function Footer() {
                         </div>
                         <div>
                             <p className='text-xs font-bold text-gray-500'>EMAIL SUPPORT</p>
-                            <p className='text-xl font-bold text-gray-600 '>care@noon.com</p>
+                            <p className='text-base md:text-xl font-bold text-gray-600'>care@noon.com</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <footer class="bg-white border-t border-gray-300">
-                <div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
-                    <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                <div class="m-auto text-gray-800 flex flex-wrap justify-left">
+                    <div class="px-3.5 md:px-5 py-5 w-1/2 sm:w-4/12 md:w-3/12">
                         <div class="text-sm uppercase text-gray-600 font-bold mb-6">
                             Getting Started
                         </div>
@@ -60,7 +60,7 @@ function Footer() {
                         </a>
                     </div>
 
-                    <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                    <div class="px-3.5 md:px-5 py-5 w-1/2 sm:w-4/12 md:w-3/12">
                         <div class="text-sm uppercase text-gray-400 font-bold mb-6">
                             Core Concepts
                         </div>
@@ -88,7 +88,7 @@ function Footer() {
                         </a>
                     </div>
 
-                    <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                    <div class="px-3.5 md:px-5 py-5 w-1/2 sm:w-4/12 md:w-3/12">
                         <div class="text-sm uppercase text-gray-400 font-bold mb-6">
                             Customization
                         </div>
@@ -116,7 +116,7 @@ function Footer() {
                         </a>
                     </div>
 
-                    <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
+                    <div class="px-3.5 md:px-5 py-5 w-1/2 sm:w-4/12 md:w-3/12">
                         <div class="text-sm uppercase text-gray-400 font-bold mb-6">
                             Community
                         </div>
@@ -153,9 +153,7 @@ function Footer() {
                 </div>
 
                 <div class="pt-2">
-                    <div class="flex pb-5 px-3 m-auto pt-5 
-            border-t border-gray-300 text-gray-400 text-sm 
-            flex-col md:flex-row max-w-6xl">
+                    <div class="flex pb-16 px-3 m-auto pt-3  border-t border-gray-300 text-gray-400 text-sm  flex-col md:flex-row max-w-6xl text-center">
                         <div class="mt-2">
                             © Copyright 1998-year. All Rights Reserved.
                         </div>

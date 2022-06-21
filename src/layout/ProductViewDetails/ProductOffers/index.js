@@ -4,7 +4,7 @@ import './index.css';
 function ProductOffers() {
   return (
     <>
-      <div class="bg-gray-100 px-5 py-4 flex flex-row justify-start">
+      <div class="bg-gray-100 w-full lg:w-4/12 px-4 py-4 flex flex-row justify-start">
         <div className="flex flex-row">
           <div className="flex flex-col">
               <div className="flex flex-row"> 

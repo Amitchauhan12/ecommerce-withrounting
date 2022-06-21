@@ -3,13 +3,13 @@ import React from 'react'
 function YourRandom() {
     return (
         <React.Fragment>
-            <h4 className='sm:text-2xl px-5 text-md font-bold text-gray-500'>Your Randoms Deals</h4>
+            <h4 className='text-2xl px-3 xl:px-5 text-md font-bold text-gray-500 mb-4 lg:mb-5'>Your Randoms Deals</h4>
 
-            <div className='grid grid-cols-12 gap-x-3 sm:grid-cols-12 px-5'>
+            <div className='grid grid-cols-12 gap-x-5 gap-y-6 sm:grid-cols-12 px-3 xl:px-5'>
                 {
                     [...new Array(6)].map((el) => {
                         return (
-                            <div class="p-2 sm:col-span-2 col-span-12 w-full mt-10">
+                            <div class="lg:col-span-2 sm:col-span-4 col-span-6">
                                 <a class="block relative h-28 rounded overflow-hidden">
                                     <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="/img/Elect-2.webp" />
                                 </a>

@@ -1,0 +1,26 @@
+.form-inputs {
+    background: #eee;
+    border: none;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+.payment-card{
+    width: 60%;
+    margin: 50px auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 0px 0px 30px;
+}
+.btn-confirmation {
+    background: green;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+}
+.card-title{
+ font-weight:500;
+ font-size: 24px;
+ }
+ .payment-card .card-title {border-bottom: 1px solid #eee;}

@@ -1,3 +1,23 @@
+.p10{
+    padding: 10px;
+}
+.pt-12{
+    padding-top: 2rem;
+}
+.f-25{
+    font-size: 25px;
+}
+.f-15 {
+    font-size: 15px;
+}
+.space-between{
+    justify-content: space-between;
+}
+.priceCustom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .titleGray {
     display: flex;
     flex-wrap: wrap;
@@ -12,7 +32,7 @@
 }
 .productTitle {
     color: rgb(64, 69, 83);
-    font-size: 1.6em;
+    font-size: 1rem;
     font-weight: 600;
     margin-bottom: 12px;
 }

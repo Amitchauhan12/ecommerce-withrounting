@@ -1,31 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 function Recommended() {
     let navigate = useNavigate();
 
+    const [productList, setProductList] = useState([])
+
+    async function fetchAllProducts() {
+        const response = await fetch("https://bountyhunterdeals.com/api/v1/product/allproducts").then(res=>res.json())
+        if(response.result.data) setProductList(response.result.data);
+        console.log(response.result.data);
+      }
+    
+      useEffect(()=>{
+        fetchAllProducts()
+      },[])
+
     return (
         <React.Fragment>
-            <div className='px-5 mt-10'>
-                <h4 className='sm:text-2xl text-md font-bold text-gray-500'>Recommended for you</h4>
-                <div class="mt-6 grid grid-cols-12 gap-x-6 sm:grid-cols-12">
+            <div className='px-3 md:px-5 mt-10'>
+                <h4 className='text-2xl text-md font-bold text-gray-500'>Recommended for you</h4>
+                <div class="mt-6 grid grid-cols-12 gap-x-6 gap-y-4 sm:grid-cols-12">
                     {
-                        [...new Array(6)].map((el, index) => {
+                        productList.map((el, index) => {
                             return (
-                                <div className='sm:col-span-2 col-span-12 w-full'onClick={()=>{
-                                    navigate('/product');
+                                <div className='lg:col-span-2 sm:col-span-4 col-span-6' onClick={()=>{
+                                    navigate('/product',{state:el});
                                 }}>
                                     <div class="group relative">
                                         <div class="w-full h-full bg-gray-200  rounded-md  group-hover:opacity-75">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />
+                                            <img src={el.productImage} alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />
                                         </div>
                                         <div className='mt-1'>
                                             <h3 class="text-sm text-gray-700 flex flex-row justify-between items-center w-full">
-                                                <a href="#">
+                                                {/* <a href="#"> */}
                                                     <span aria-hidden="true" class="absolute inset-0"></span>
-                                                    Basic Tee
-                                                </a>
-                                                <p class="text-sm font-medium text-gray-900">$35</p>
+                                                   {el.productName}
+                                                {/* </a> */}
+                                                <p class="text-sm font-medium text-gray-900">${el.productPrice}</p>
                                             </h3>
                                             <p class="mt-1 text-xs font-bold text-green-500">55% OFF</p>
                                             <p class="mt-2 text-xs font-medium text-gray-500">Arrives <span className='text-xs font-bold text-gray-700'>Wed, Mar 24</span></p>

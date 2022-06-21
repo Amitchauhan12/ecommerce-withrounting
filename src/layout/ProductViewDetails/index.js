@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 // material-ui
 import { useTheme } from "@mui/material/styles";
@@ -15,8 +15,11 @@ import ProductOffers from "./ProductOffers";
 function ProductView() {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down("md"));
+  const location = useLocation();   
 
+  const product = location.state
   
+  console.log('product',product);
 
   return (
     <>
@@ -34,18 +37,19 @@ function ProductView() {
           </div>
           <Box
             sx={{
-                display: "grid",
-                rowGap: 1,
-                gridTemplateColumns: "repeat(3, 1fr)",
+              display: "flex",
+              flex: "wrap",
+              rowGap: 1,
+              gridTemplateColumns: "repeat(3, 1fr)",
             }}
           >
-            <div class="w-full h-full bg-gray-200 rounded-md  group-hover:opacity-75">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />
+            <div class="w-full md:w-1/2 lg:w-4/12 h-full bg-gray-200 rounded-md  group-hover:opacity-75">
+                <img src={product.productImage} alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />
             </div>
-            <ProductMetaData />
-            <ProductOffers />
+            <ProductMetaData productDetails={product} />
+            <ProductOffers  />
           </Box>
-          <ProductFeatures />
+          <ProductFeatures productDetails={product} />
         </div>
         <Footer />
         <div className={matchDownMd ? "block" : "hidden"}>

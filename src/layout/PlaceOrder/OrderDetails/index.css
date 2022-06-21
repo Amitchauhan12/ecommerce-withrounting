@@ -1,0 +1,7 @@
+.total-product-cost-section>span {
+    display: inline-block;
+  }
+
+  .order-detail-block {
+    border: 1px solid #eee;
+  }

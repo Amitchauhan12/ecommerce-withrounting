@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import Modal from "react-bootstrap/Modal";
 
 import "./index.css";
+import { API_URL } from "../../constants";
 
 function RegistrationComponent(params) {
   const [show,setShow]= useState(false);
@@ -22,23 +23,52 @@ function RegistrationComponent(params) {
 
   const handleClose = () =>{
     setShow(false)
+      params.setRegistrationWindowFlag(false)
    };
 
 
  useEffect(()=>{
-   console.log(params)
    setShow(params.isRegistrationFlag)
  },[params])
 
-  const handleOnSubmit = (values) => {
-    console.log(values);
+  const handleOnSubmit = async(values) => {
+    // console.log(values);
+
+    var apiHeaders = new Headers();
+    apiHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      firstName: values.firstName,
+      lastName: values.lastName,
+      emailId:  values.email,
+      password : values.password
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: apiHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    const response = await fetch(API_URL+"/user/register", requestOptions)
+      .then((response) => response.json())
+      .then((result) => result)
+      .catch((error) => console.log("error", error));
+
+    if(response?.status ==="success") {
+      alert("SignUp successfull.")
+      handleClose()
+    }
+    else alert(response?.error?.message)
+
   };
+
   return (
     <Modal
       show={show}
       onHide={() => {
         handleClose();
-        params.closeRegistrationDialog(false);
       }}
       dialogClassName="modal-90w"
       aria-labelledby="example-custom-modal-styling-title"
@@ -51,9 +81,7 @@ function RegistrationComponent(params) {
           <Formik
             initialValues={initialValuesForSignIn}
             validationSchema={signInSchema}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
+            onSubmit={handleOnSubmit}
           >
             {(formik) => {
               const {
@@ -75,7 +103,8 @@ function RegistrationComponent(params) {
                   <div className="signupBox">
                     <h3 className="signInTitle">Already have an account?</h3>
                     <h3 className="linkSignup" onClick={()=>{
-                      params.setLoginWindowFlag(true);
+                      params.setLoginWinFlag(true)
+                      params.setRegistrationWindowFlag(false)
                     }}>Sign In</h3>
                   </div>
                   <Form>

@@ -72,27 +72,22 @@ const TabsList = styled(TabsListUnstyled)`
   align-content: space-between;
 `;
 
-export default function ProductFeatures() {
+export default function ProductFeatures({productDetails}) {
   return (
     <TabsUnstyled defaultValue={0}>
-      <TabsList>
+      <TabsList className='px-3 lg:px-5 mb-3.5'>
         <Tab>OverView</Tab>
         <Tab>Review</Tab>
       </TabsList>
       <TabPanel value={0}>
-          <div>
+          <div className='px-3 lg:px-5 mb-3'>
             <h1 className="flex flex-row">Highlights</h1>
             <p className="flex flex-row">
-                    Ultra-High Speed SSD - Maximize your play sessions with near instant load times for installed PS5 games.
-                    Integrated I/O - The custom integration of the PS5 console's systems lets creators pull data from the SSD so quickly that they can design games in ways never before possible.
-                    Ray Tracing - Immerse yourself in worlds with a new level of realism as rays of light are individually simulated, creating true-to-life shadows and reflections in supported PS5 games.
-                    4K-TV Gaming - Play your favorite PS5 games on your stunning 4K TV.
-                    Up to 120fps with 120Hz Output - Enjoy smooth and fluid high frame rate gameplay at up to 120fps for compatible games, with support for 120Hz output on 4K displays.
-                    HDR Technology - With an HDR TV, supported PS5 games display an unbelievably vibrant and lifelike range of colors.
+                   {productDetails.productDescription}
             </p>
           </div>
 
-          <div  className="">
+          <div  className="px-3 lg:px-5 mb-3">
             <h1 className="flex flex-row"> Overview </h1>
                 <span className="flex flex-row">
                         Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio, and an all-new generation of incredible PlayStation games. PS5 Digital Edition is an all-digital version of the PS5 console with no disc drive. Sign into your account for PlayStation Network and go to PlayStationStore to buy and download games. Package includes: PlayStation5 Digital Edition Console DualSense Wireless Controller DualSense USB charging cable ASTRO's PLAYROOM (Pre-installed game)** Base HDMI cable AC power cord Printed materials ** System software update may be required. Internet connection required for update.

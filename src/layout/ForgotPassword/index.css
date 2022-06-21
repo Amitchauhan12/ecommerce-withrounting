@@ -1,0 +1,97 @@
+form{
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.card-title{
+ font-weight:500;
+ font-size: 24px;
+ }
+
+.btn{
+  font-size: 14px;
+  margin-top:20px;
+}
+
+
+.forgot-form{ 
+  width:550px;
+  margin:20px auto;
+  padding: 15px;
+}
+
+.sign-up{
+  text-align:center;
+  padding:20px 0 0;
+}
+
+.alert{
+  margin-bottom:-30px;
+  font-size: 13px;
+  margin-top:20px;
+}
+.btn-signin, .btn-register {
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    
+}
+
+.form-inputs {
+    background: #eee;
+    border: none;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.forgot-password-link {
+    text-decoration: none;
+    color: #1667cb;
+    margin-top: 10px;
+    display: block;
+}
+.btn-signin{
+  background: #1667cb;
+}
+
+.btn-register{
+    background: #eee;
+    color: #333;
+    border: 1px solid #eee;
+}
+.close-icon{
+  transform: rotate(45deg);
+  width: 30px;
+  height: 30px;
+}
+.back-top-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.back-top-btn a{
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+.close-icon {
+    transform: rotate(45deg);
+    width: 30px;
+    height: 30px;
+    font-size: 27px;
+    background: #eee;
+    border-radius: 50%;
+    padding: 0px 20p;
+    position: relative;
+    left: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-icon span{
+position: relative;
+    top: -3px;
+  }

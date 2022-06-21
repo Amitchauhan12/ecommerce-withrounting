@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { SearchBar, CategoryBar } from "components";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import Modal from 'react-bootstrap/Modal';
 import Login from '../../../Login';
 import Registration from '../../../Registration';
-import { validateYupSchema } from "formik";
-
+import ForgotPassword from "../../../ForgotPassword";
+import { Link } from 'react-router-dom';
 const DesktopHeader = () => {
 
   const [showLogin, setLoginWinFlag] = useState(false);
   const [showRegistration, setRegistration] = useState(false);
+  const [showForgotPass, setShowForgotPass] = useState(false)
 
   function setLoginWindowFlag(flag){
     setLoginWinFlag(flag);
@@ -31,9 +31,6 @@ const DesktopHeader = () => {
   useEffect(()=>{
     if(showRegistration){
       setLoginWinFlag(false);
-    } 
-    if(showLogin){
-      setRegistration(false)
     }
   },[showLogin,showRegistration]);
 
@@ -43,8 +40,9 @@ const DesktopHeader = () => {
         <div className="w-full flex flex-row justify-between items-center">
           <div>
             <img
-              src="https://z.nooncdn.com/s/app/com/noon/images/logos/noon-black-en.svg"
-              width="120px"
+              src="/img/bh-logo.png"
+              width="60px"
+              style={{marginRight:50}}
             />
           </div>
           <div className="w-full">
@@ -53,33 +51,37 @@ const DesktopHeader = () => {
         </div>
         <div className="flex flex-row justify-between items-center">
           <div className="flex space-x-2 items-center w-full border-r border-gray-300 p-2">
-            <div className="font-bold text-sm whitespace-nowrap" onClick={()=>{
+            <div className="font-bold text-sm whitespace-nowrap cursor-pointer" onClick={()=>{
               setLoginWindowFlag(true)
             }}>Sign In</div>
             <div>
               <PersonOutlineIcon />
             </div>
           </div>
-
+          <Link to={"/product/cart"}>
           <div className="w-full flex space-x-2 items-center p-2">
-            <div className="font-bold text-sm">Cart</div>
+            <div className="font-bold text-sm cursor-pointer">Cart</div>
             <div>
               <ShoppingCartOutlinedIcon />
             </div>
           </div>
+          </Link>
         </div>
       </div>
       <div className="category-bar-container">
         <CategoryBar />
       </div>
       {
-        showLogin &&
-        <Login isLoginFlag={showLogin} closeDialog={closeDialog} setRegistrationWindowFlag={setRegistrationWindowFlag}/>
+        <Login isLoginFlag={showLogin} setShowForgotPass={setShowForgotPass} setLoginWinFlag={setLoginWindowFlag} closeDialog={closeDialog} setRegistrationWindowFlag={setRegistrationWindowFlag}/>
       }
       {
         showRegistration &&
-        <Registration isRegistrationFlag={showRegistration} closeRegistrationDialog={closeRegistrationDialog} />
+        <Registration setLoginWinFlag={setLoginWindowFlag} setRegistrationWindowFlag={setRegistrationWindowFlag} isRegistrationFlag={showRegistration} closeRegistrationDialog={closeRegistrationDialog} />
       }
+
+      <ForgotPassword isForgotFlag={showForgotPass} setShowForgotPass={setShowForgotPass} />
+
+    
     </React.Fragment>
   );
 };

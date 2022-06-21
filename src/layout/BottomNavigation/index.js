@@ -1,16 +1,13 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import clsx from "clsx";
 import { makeStyles } from "@mui/styles";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import HomeIcon from '@mui/icons-material/Home';
 import AutoAwesomeMotionIcon from '@mui/icons-material/AutoAwesomeMotion';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -55,7 +52,7 @@ export default function SimpleBottomNavigation() {
       />
       <BottomNavigationAction
         label="Cart"
-        icon={<ShoppingCartIcon className={`${value == 3 && "text-blue"}`} />}
+        icon={<Link to={"/product/cart"}><ShoppingCartIcon className={`${value == 3 && "text-blue"}`} /></Link>}
       />
     </BottomNavigation>
   );

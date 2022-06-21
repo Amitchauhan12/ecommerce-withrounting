@@ -4,22 +4,33 @@ import * as Yup from "yup";
 import Modal from "react-bootstrap/Modal";
 
 import "./index.css";
+import { API_URL } from "../../constants";
+import ForgotPassword from "../ForgotPassword";
 
 function LoginComponent(params) {
-  const [show,setShow]= useState(false);
+  const [show, setShow] = useState(false);
+
   const initialValuesForSignIn = {
     email: "",
     password: "",
   };
-  const handleClose = () =>{
-     setShow(false)
-    };
+  const handleClose = () => {
+    setShow(false);
+    console.log("handleClose");
+    params.setLoginWinFlag(false)
+  };
 
+  function forgotPassHandler() {
+    setShow(false)
+    params.setShowForgotPass(true)
+    params.setLoginWinFlag(false)
 
-  useEffect(()=>{
-    console.log(params)
-    setShow(params.isLoginFlag)
-  },[params])
+  }
+
+  useEffect(() => {
+    setShow(params.isLoginFlag);
+    console.log(params);
+  }, [params.isLoginFlag]);
 
   const signInSchema = Yup.object().shape({
     email: Yup.string().email().required("Email is required"),
@@ -28,17 +39,45 @@ function LoginComponent(params) {
       .min(4, "Password is too short - should be 4 chars minimum"),
   });
 
-  const handleOnSubmit = (values) => {
-    console.log(values);
+  const handleOnSubmit = async (values) => {
+
+    var apiHeaders = new Headers();
+    apiHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      emailId: values.email,
+      password: values.password,
+    });
+
+    var requestOptions = {
+      method: "POST",
+      headers: apiHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    const response = await fetch(API_URL+"/auth/login", requestOptions)
+      .then((response) => response.json())
+      .then((result) => result)
+      .catch((error) => console.log("error", error));
+
+    if(response?.status ==="success"){
+      localStorage.setItem("token",response.token)
+      alert("login successfull.")
+      setShow(false)
+    }
+    else if(response?.error?.message) alert(response?.error?.message)
+    else alert("something went wrong!")
   };
 
   return (
+    <>
     <Modal
       show={show}
-      onHide={() =>{
-         handleClose()
-         params.closeDialog(false)
-        }}
+      onHide={() => {
+        handleClose();
+        params.closeDialog(false);
+      }}
       dialogClassName="modal-90w"
       aria-labelledby="example-custom-modal-styling-title"
     >
@@ -50,9 +89,7 @@ function LoginComponent(params) {
           <Formik
             initialValues={initialValuesForSignIn}
             validationSchema={signInSchema}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
+            onSubmit={handleOnSubmit}
           >
             {(formik) => {
               const {
@@ -76,9 +113,14 @@ function LoginComponent(params) {
                   </div>
                   <div className="signupBox">
                     <h3 className="signInTitle">Don't have an account?</h3>
-                    <h3 className="linkSignup" onClick={()=>{
-                      params.setRegistrationWindowFlag(true)
-                    }}>Sign Up</h3>
+                    <h3
+                      className="linkSignup"
+                      onClick={() => {
+                        params.setRegistrationWindowFlag(true);
+                      }}
+                    >
+                      Sign Up
+                    </h3>
                   </div>
                   <Form>
                     <div className="formBody px-5">
@@ -138,7 +180,7 @@ function LoginComponent(params) {
                     </div>
 
                     <div className="row">
-                      <a className="forgotPass">Forgot your password?</a>
+                      <a className="forgotPass cursor-pointer" onClick={forgotPassHandler}>Forgot your password?</a>
                     </div>
                     <div className="dialogFooter">
                       <button
@@ -158,10 +200,10 @@ function LoginComponent(params) {
               );
             }}
           </Formik>
-          );
         </div>
       </Modal.Body>
     </Modal>
+</>
   );
 }
 

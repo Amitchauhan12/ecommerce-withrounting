@@ -5,18 +5,18 @@ function TopPicks() {
         <React.Fragment>
             <div class="w-full my-10 relative flex items-center justify-center">
                 <img src="/img/banner-5.png" alt="dining" class="w-full h-full object-cover object-center absolute z-0 " />
-                <div className='w-full relative z-40'>
-                    <div class="container w-full px-5 pt-24 mx-auto">
+                <div className='w-full relative'>
+                    <div class="container w-full px-5 py-16 mx-auto">
                         <div class="flex flex-col text-center w-full">
                             <h2 class="text-xs mx-auto text-gray-100 tracking-widest font-bold title-font mb-3">ROOF PARTY POLAROI</h2>
                             <h1 class="sm:text-3xl text-2xl font-bold title-font mb-4"><span className='bg-white text-blue-400 py-1 px-4 uppercase rounded-md'>Top Picks Deals  </span></h1>
                         </div>
                     </div>
-                    <div class="py-10 grid grid-cols-12 gap-x-6 sm:grid-cols-12 px-5 bg-blue-100">
+                    <div class="py-10 grid grid-cols-12 gap-x-6 gap-y-6 sm:grid-cols-12 px-4 xl:px-5 bg-blue-100">
                         {
                             [...new Array(6)].map((el, index) => {
                                 return (
-                                    <div className='sm:col-span-2 col-span-12 w-full'>
+                                    <div className='lg:col-span-2 sm:col-span-4 col-span-6'>
                                         <div class="group relative">
                                             <div class="w-full h-full bg-gray-200  rounded-md  group-hover:opacity-75">
                                                 <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />

@@ -3,9 +3,9 @@ import React from 'react'
 function SuperDeals() {
     return (
         <div>
-            <div class="container px-5 pt-24 text-left">
+            <div class="container px-3 lg:px-5 pt-12 xl:pt-24 text-left">
                 <div class="text-left mb-5">
-                    <h1 class="sm:text-3xl text-2xl font-bold title-font text-blue-400 mb-4">Home And Kitchen Super Deals</h1>
+                    <h1 class="text-2xl font-bold title-font text-blue-400 mb-2 lg:mb-4">Home And Kitchen Super Deals</h1>
                     <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 text-left text-gray-500s">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
                     <div class="flex mt-6 justify-start">
                         <div class="w-16 h-1 rounded-full bg-red-400 inline-flex"></div>
@@ -13,11 +13,11 @@ function SuperDeals() {
                 </div>
             </div>
             <div className='bg-black py-10'>
-                <div class="mt-6 grid grid-cols-12 gap-x-6 sm:grid-cols-12 px-5">
+                <div class="mt-6 grid grid-cols-12 gap-x-4 xl:gap-x-6 gap-y-6 sm:grid-cols-12 px-3 lg:px-5">
                     {
                         [...new Array(6)].map((el, index) => {
                             return (
-                                <div className='sm:col-span-2 col-span-12 w-full'>
+                                <div className='lg:col-span-2 sm:col-span-4 col-span-6'>
                                     <div class="group relative">
                                         <div class="w-full h-full bg-gray-200  rounded-md  group-hover:opacity-75">
                                             <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />
@@ -48,11 +48,11 @@ function SuperDeals() {
                         })
                     }
                 </div>
-                <div class="mt-6 grid grid-cols-12 mt-24 gap-x-6 sm:grid-cols-12 px-5">
+                <div class="mt-6 grid grid-cols-12 md:mt-12 xl:mt-24 gap-x-4 xl:gap-x-6 gap-y-6 mb-6 lg:mb-0 sm:grid-cols-12 px-3 lg:px-5">
                     {
                         [...new Array(6)].map((el, index) => {
                             return (
-                                <div className='sm:col-span-2 col-span-12 w-full'>
+                                <div className='lg:col-span-2 sm:col-span-4 col-span-6'>
                                     <div class="group relative">
                                         <div class="w-full h-full bg-gray-200  rounded-md  group-hover:opacity-75">
                                             <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />

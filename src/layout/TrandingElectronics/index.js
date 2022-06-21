@@ -3,13 +3,13 @@ import React from 'react'
 function TrandingElectronics() {
     return (
         <React.Fragment>
-            <div className='px-5 mt-16'>
-                <h4 className='sm:text-2xl text-md font-bold text-gray-500'>Tranding Electronic Deals</h4>
-                <div class="mt-6 grid grid-cols-12 gap-x-6 sm:grid-cols-12">
+            <div className='px-3 xl:px-5 mt-16'>
+                <h4 className='text-2xl text-md font-bold text-gray-500'>Tranding Electronic Deals</h4>
+                <div class="mt-6 grid grid-cols-12 gap-y-6 gap-x-6 sm:grid-cols-12">
                     {
                         [...new Array(6)].map((el, index) => {
                             return (
-                                <div className='sm:col-span-2 col-span-12 w-full'>
+                                <div className='lg:col-span-2 sm:col-span-4 col-span-6'>
                                     <div class="group relative">
                                         <div class="w-full h-full bg-gray-200  rounded-md  group-hover:opacity-75">
                                             <img src="/img/Elect-1.webp" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full  object-center object-cover" />

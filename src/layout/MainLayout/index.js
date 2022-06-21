@@ -34,7 +34,7 @@ const MainLayout = () => {
       <RecommendedFor />
       <MegaDeals />
       <SuperDeals />
-      <RandomClearance />
+      {/* <RandomClearance /> */}
       <TrandingElectronics />
       <YourRandom />
       <HomeBlogs />

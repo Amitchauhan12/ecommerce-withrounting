@@ -14,9 +14,9 @@ function HomeBannerSlider() {
                     </div>
                 </div>
             </div>
-            <div className='sub-carousal-container mt-3 px-5'>
-                <div className='grid-container gap-2 grid grid-cols-12'>
-                    <div class="sm:col-span-2 col-span-12">
+            <div className='sub-carousal-container mt-3 px-3 lg:px-4'>
+                <div className='grid-container gap-3 grid grid-cols-12'>
+                    <div class="lg:col-span-2 sm:col-span-4 col-span-12">
                         <div className='flex flex-col justify-start items-start w-full'>
                             <div className='bg-purple-100 px-2 py-4 w-full rounded-md'>
                                 <img class="w-24 h-20 mx-auto object-contain object-center" src="img/product-1.png" alt="banner" />
@@ -24,7 +24,7 @@ function HomeBannerSlider() {
                             <p className='text-xs font-bold teext-gray-gray-500 px-3 mt-2'>Cosmetic one</p>
                         </div>
                     </div>
-                    <div class="sm:col-span-2 col-span-6">
+                    <div class="lg:col-span-2 sm:col-span-4 col-span-6">
                     <div className='flex flex-col justify-start items-start w-full'>
                             <div className='bg-red-100 px-2 py-4 w-full rounded-md'>
                                 <img class="w-24 h-20 mx-auto object-contain object-center" src="img/product-1.png" alt="banner" />
@@ -32,7 +32,7 @@ function HomeBannerSlider() {
                             <p className='text-xs font-bold teext-gray-gray-500 px-3 mt-2'>Cosmetic two</p>
                         </div>
                     </div>
-                    <div class="sm:col-span-2 col-span-6">
+                    <div class="lg:col-span-2 sm:col-span-4 col-span-6">
                     <div className='flex flex-col justify-start items-start w-full'>
                             <div className='bg-yellow-100 px-2 py-4 w-full rounded-md'>
                                 <img class="w-24 h-20 mx-auto object-contain object-center" src="img/product-1.png" alt="banner" />
@@ -40,7 +40,7 @@ function HomeBannerSlider() {
                             <p className='text-xs font-bold teext-gray-gray-500 px-3 mt-2'>Cosmetic three</p>
                         </div>
                     </div>
-                    <div class="sm:col-span-2 col-span-6">
+                    <div class="lg:col-span-2 sm:col-span-4 col-span-6">
                     <div className='flex flex-col justify-start items-start w-full'>
                             <div className='bg-indigo-100 px-2 py-4 w-full rounded-md'>
                                 <img class="w-24 h-20 mx-auto object-contain object-center" src="img/product-1.png" alt="banner" />
@@ -48,7 +48,7 @@ function HomeBannerSlider() {
                             <p className='text-xs font-bold teext-gray-gray-500 px-3 mt-2'>Cosmetic four</p>
                         </div>
                     </div>
-                    <div class="sm:col-span-2 col-span-6">
+                    <div class="lg:col-span-2 sm:col-span-4 col-span-6">
                     <div className='flex flex-col justify-start items-start w-full'>
                             <div className='bg-pink-100 px-2 py-4 w-full rounded-md'>
                                 <img class="w-24 h-20 mx-auto object-contain object-center" src="img/product-1.png" alt="banner" />
@@ -56,7 +56,7 @@ function HomeBannerSlider() {
                             <p className='text-xs font-bold teext-gray-gray-500 px-3 mt-2'>Cosmetic five</p>
                         </div>
                     </div>
-                    <div class="sm:col-span-2 col-span-6">
+                    <div class="lg:col-span-2 sm:col-span-4 col-span-6">
                     <div className='flex flex-col justify-start items-start w-full'>
                             <div className='bg-green-100 px-2 py-4 w-full rounded-md'>
                                 <img class="w-24 h-20 mx-auto object-contain object-center" src="img/product-1.png" alt="banner" />
